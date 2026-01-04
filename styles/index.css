@@ -1,0 +1,159 @@
+@import url("./components/ui/button.css");
+@import url("./components/ui/loader.css");
+@import url("./components/navbar.css");
+@import url("./components/card.css");
+@import url("./components/modal.css");
+@import url("./components/material-input.css");
+@import url("./components/ui/icons/hamburger.css");
+
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+	font-family: "Roboto", sans-serif;
+
+	--anim-delay: 1;
+}
+
+#root {
+	@apply bg-neutral-100;
+}
+
+.bg-app {
+	background-image: url("../images/bg1.jpg");
+	background-size: 100% 200px;
+	background-repeat: no-repeat;
+}
+
+.bg-app1 {
+	background-image: linear-gradient(180deg, #3b82f6, #3b82f6);
+	background-size: 100% 200px;
+	background-repeat: no-repeat;
+}
+
+@layer components {
+	/* Background */
+
+	/* Divider */
+	.divider {
+		@apply flex items-center;
+	}
+	.divider::before,
+	.divider::after {
+		@apply h-[2px] flex-[1] content-[''] bg-slate-300 mx-4;
+	}
+
+	/* Status page */
+	/* #info-main li {
+		@apply flex-grow w-full;
+	} */
+	/* #info-main li:last-child {
+		@apply flex-grow w-full;
+	} */
+	#info-main li .card {
+		@apply h-full m-0 md:p-6;
+	}
+	#info-main li .card h2 {
+		@apply pb-1 font-semibold;
+	}
+	#info-main .info-main__value {
+		@apply text-xl font-semibold text-blue-500 md:text-2xl;
+	}
+}
+
+/* Animations */
+@keyframes floating {
+	0% {
+		transform: translateY(10px);
+	}
+	50% {
+		transform: translateY(-10px);
+	}
+	100% {
+		transform: translateY(10px);
+	}
+}
+
+.animate-float {
+	animation: floating 6s infinite ease-in-out;
+}
+
+@keyframes fadeInLeft {
+	0% {
+		transform: translateX(-50px);
+		opacity: 0;
+	}
+
+	100% {
+		transform: translateX(0);
+		opacity: 1;
+		animation-fill-mode: forwards;
+	}
+}
+.animate-fade-in-left {
+	animation: fadeInLeft 1s;
+}
+
+@keyframes fadeInRight {
+	0% {
+		transform: translateX(50px);
+		opacity: 0;
+	}
+
+	100% {
+		transform: translateX(0);
+		opacity: 1;
+		animation-fill-mode: forwards;
+	}
+}
+.animate-fade-in-right {
+	animation: fadeInRight 1s;
+}
+
+@keyframes fadeInUp {
+	0% {
+		transform: translateY(-50px);
+		opacity: 0;
+	}
+
+	100% {
+		transform: translateY(0);
+		opacity: 1;
+		animation-fill-mode: forwards;
+	}
+}
+.animate-fade-in-up {
+	animation: fadeInUp 1s;
+}
+
+@keyframes fadeInDown {
+	0% {
+		transform: translateY(50px);
+		opacity: 0;
+	}
+
+	100% {
+		transform: translateY(0);
+		opacity: 1;
+		animation-fill-mode: forwards;
+	}
+}
+.animate-fade-in-down {
+	animation: fadeInDown 1s;
+}
+
+.anim-delay-200 {
+	animation-delay: calc(200ms * var(--anim-delay));
+}
+.anim-delay-300 {
+	animation-delay: calc(300ms * var(--anim-delay));
+}
+.anim-delay-500 {
+	animation-delay: calc(500ms * var(--anim-delay));
+}
+.anim-delay-1000 {
+	animation-delay: 1000ms;
+}
